@@ -1,12 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import { Grid, Typography } from "@material-ui/core";
+import { ChartContainer } from "./components/shared/ChartContainer";
 function App() {
   return (
-    <div className="App">
-          <h2>D3 Charts in React</h2>
-    </div>
+    <Grid container>
+      <Typography>React Dashboard</Typography>
+      <Grid
+        container
+        item
+        style={{ display: "flex", flexWrap: "wrap", padding: 50 }}
+        spacing={3}
+      >
+        <ChartContainer>Pakistan</ChartContainer>
+        <ChartContainer>Pakistan</ChartContainer>
+        <ChartContainer>Pakistan</ChartContainer>
+        <ChartContainer>Pakistan</ChartContainer>
+        <ChartContainer>Pakistan</ChartContainer>
+        <ChartContainer>Pakistan</ChartContainer>
+      </Grid>
+    </Grid>
   );
 }
 
