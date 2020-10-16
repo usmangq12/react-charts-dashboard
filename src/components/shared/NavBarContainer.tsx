@@ -5,12 +5,12 @@ interface IProps {
   children?: ReactNode;
 }
 
-export const ChartContainer = ({ children }: IProps) => {
+export const NavBarContainer = ({ children }: IProps) => {
   return (
-    <Grid item xs={12} sm={6}>
-      {children}
+    <Grid item xs={12} sm={12}>
+      <Paper elevation={3}>{children}</Paper>
     </Grid>
   );
 };
 
-export default ChartContainer;
+export default NavBarContainer;
