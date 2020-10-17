@@ -1,14 +1,20 @@
-import React, { ReactNode } from "react";
-import { Grid, Paper } from "@material-ui/core";
-
-interface IProps {
-  children?: ReactNode;
+import React from "react";
+import { Grid } from "@material-ui/core";
+import { ChartData, ChartProps } from "../../models";
+interface IChartProps {
+  chartProps: ChartProps;
+  data: ChartData[];
 }
 
-export const ChartContainer = ({ children }: IProps) => {
+interface IProps {
+  component: React.FC<IChartProps>;
+  data: ChartData[];
+}
+
+export const ChartContainer = ({ component: Component, data }: IProps) => {
   return (
     <Grid item xs={12} sm={6}>
-      {children}
+      <Component data={data} chartProps={new ChartProps()} />
     </Grid>
   );
 };
