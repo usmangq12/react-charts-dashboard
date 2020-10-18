@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, Toolbar, Typography } from "@material-ui/core";
+import { AppBar, Toolbar, Typography, Grid } from "@material-ui/core";
 import NavbarStyles from "../../styles/NavBar";
 
 interface IProps {
@@ -9,13 +9,20 @@ interface IProps {
 export const NavBar = ({ title }: IProps) => {
   const navbarClasses = NavbarStyles();
   return (
-    <AppBar className={navbarClasses.appBar}>
-      <Toolbar>
-        <Typography variant="h4" className={navbarClasses.MarginRight}>
-          {title}
-        </Typography>
-      </Toolbar>
-    </AppBar>
+    <Grid
+      container
+      item
+      style={{ display: "flex", flexWrap: "wrap", padding: 50 }}
+      spacing={3}
+    >
+      <AppBar className={navbarClasses.appBar}>
+        <Toolbar>
+          <Typography variant="h4" className={navbarClasses.MarginRight}>
+            {title}
+          </Typography>
+        </Toolbar>
+      </AppBar>
+    </Grid>
   );
 };
 

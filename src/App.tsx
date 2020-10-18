@@ -19,26 +19,17 @@ function App() {
 
   return (
     <Grid container>
+      <NavBar title="React Dashboard" />
+      {charts.map((chart) => (
+        <ChartContainer component={chart} data={chartData} />
+      ))}
       <Button
         onClick={randomizeChartData}
         variant="contained"
-        style={{backgroundColor: "purple", color: "white"}}
+        style={{ width: "200px", height: "50px", marginTop: 100, backgroundColor: "purple", color: "white" }}
       >
         Randomize Data
       </Button>
-      <Grid
-        container
-        item
-        style={{ display: "flex", flexWrap: "wrap", padding: 50 }}
-        spacing={3}
-      >
-        {/* <NavBarContainer>
-          <NavBar title="React Dashboard" />
-        </NavBarContainer> */}
-        {charts.map((chart) => (
-          <ChartContainer component={chart} data={chartData} />
-        ))}
-      </Grid>
     </Grid>
   );
 }
