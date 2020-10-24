@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import ChartContainer from "./components/shared/ChartContainer";
-import NavBarContainer from "./components/shared/NavBarContainer";
 import NavBar from "./components/shared/NavBar";
-import { Grid, Button } from "@material-ui/core";
-import BarChart from "./components/BarChart";
+import { Grid } from "@material-ui/core";
+import BarChart from "./components/BarChart/BarChart";
+import LineChart from "./components/LineChart/LineChart";
 import { ChartData } from "./models";
 import { generateChartData, Products } from "./utilities/utils";
+import { IChartProps } from "./models/ChartProps"
 
 function App() {
-  const [charts] = useState<React.FC[]>(() => [BarChart]);
+  const [charts] = useState<React.FC<IChartProps>[]>(() => [BarChart, LineChart]);
   const [chartData, setChartData] = useState<ChartData[]>(() =>
     generateChartData(Products)
   );
@@ -19,22 +20,13 @@ function App() {
 
   return (
     <Grid container>
-      <Button
-        onClick={randomizeChartData}
-        variant="contained"
-        style={{backgroundColor: "purple", color: "white"}}
-      >
-        Randomize Data
-      </Button>
+      <NavBar handleRandomizeData={randomizeChartData} />
       <Grid
         container
         item
-        style={{ display: "flex", flexWrap: "wrap", padding: 50 }}
+        style={{ display: "flex", flexWrap: "wrap", padding: "100px" }}
         spacing={3}
       >
-        {/* <NavBarContainer>
-          <NavBar title="React Dashboard" />
-        </NavBarContainer> */}
         {charts.map((chart) => (
           <ChartContainer component={chart} data={chartData} />
         ))}

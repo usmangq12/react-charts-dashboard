@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { scaleBand, scaleLinear } from 'd3-scale';
-import XYAxis from './shared/XY_Axis';
-import Grid from './shared/Grid';
+import XYAxis from '../shared/XY_Axis';
+import Grid from '../shared/Grid';
 import Bar from './Bar';
 import { transition } from 'd3-transition';
 
