@@ -43,10 +43,12 @@ const LineChart = ({ data = [], chartProps }: IChartProps) => {
     svg
       .append("g")
       .attr("class", "x-axis")
-      .attr("transform", `translate(0,${chartProps.height})`)
+      .attr('transform', `translate(${20}, ${chartProps.height})`)
       .call(axisBottom(xScale).scale(xScale).tickSize(15));
 
-    svg.append("g").attr("class", "y-axis").call(axisLeft(yScale));
+    svg.append("g").attr("class", "y-axis")
+    .attr('transform', `translate(${20}, ${0})`)
+    .call(axisLeft(yScale));
 
     const t = transition().duration(1000);
     svg
@@ -61,13 +63,16 @@ const LineChart = ({ data = [], chartProps }: IChartProps) => {
   };
   return (
     <svg
+      // style={{overflow: 'visible'}}
       ref={ref}
+      transform={`translate(${chartProps.margin.left}, ${chartProps.margin.top})`}
       width={
         chartProps.width + chartProps.margin.left + chartProps.margin.right
       }
       height={
         chartProps.height + chartProps.margin.top + chartProps.margin.bottom
       }
+
     ></svg>
   );
 };
