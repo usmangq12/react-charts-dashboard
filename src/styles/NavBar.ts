@@ -5,9 +5,6 @@ export const NavbarStyles = makeStyles((theme: Theme) =>
     root: {
       zIndex: 1,
     },
-    menuButton: {
-      marginRight: theme.spacing(2),
-    },
     MarginRight: {
       marginRight: 50
     },
