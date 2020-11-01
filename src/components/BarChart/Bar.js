@@ -19,6 +19,7 @@ export const Bar = ({ xScale, yScale, height, data, t }) => {
             .data(data)
             .transition(t)
             .attr('y', d => yScale(d.value))
+            .style('margin', 30)
             .attr('height', d => height - yScale(d.value));
     }
 
