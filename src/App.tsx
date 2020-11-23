@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import ChartContainer from "./components/shared/ChartContainer";
-import NavBar from "./components/shared/NavBar";
+import ChartContainer from "./shared/ChartContainer";
+import NavBar from "./shared/NavBar";
 import { Grid } from "@material-ui/core";
 import BarChart from "./components/BarChart/BarChart";
 import LineChart from "./components/LineChart/LineChart";

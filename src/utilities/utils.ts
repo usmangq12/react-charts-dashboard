@@ -27,7 +27,7 @@ export const ScatterLabels: string[] = ["New York", "San Francisco", "Austin"]
 export const generateChartData = (labels: string[]): ChartData[] => {
   return labels.map((label: string) => ({
     name: label,
-    value: Math.random() * 10000,
+    value: Math.random() * 100,
   }));
 };
 
