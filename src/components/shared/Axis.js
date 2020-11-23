@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { select, selectAll } from "d3-selection";
 import { axisBottom, axisLeft } from "d3-axis";
+import * as d3 from "d3";
 
 export const Axis = ({ scale, orient, ticks, transform, t }) => {
     const ref = useRef();
@@ -22,7 +23,7 @@ export const Axis = ({ scale, orient, ticks, transform, t }) => {
         }
         if (orient === "left") {
           axis = axisLeft(scale)
-            .ticks(ticks);
+            .ticks(ticks, "s")
         }
         select(node).call(axis);
         return;
@@ -32,7 +33,7 @@ export const Axis = ({ scale, orient, ticks, transform, t }) => {
     
         if (orient === "left") {
           const axis = axisLeft(scale).ticks(ticks); 
-          selectAll(`.${orient}`).transition(t).call(axis)
+          selectAll(`.${orient}`).transition(1000).call(axis)
         }
       }
 

@@ -24,7 +24,7 @@ export const Grid = ({ yScale, width, ticks, t }) => {
     }
     const updateAxis = () => {
         const node = ref.current;
-        select('.grid-group').transition(t).call(gridlines({ yScale, width, ticks }))
+        select('.grid-group').transition(1000).call(gridlines({ yScale, width, ticks }))
         .attr("stroke-width", 0.2)
 
     }
