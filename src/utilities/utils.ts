@@ -1,4 +1,5 @@
 import { ChartData, ScatterChartData } from "../models";
+import { IBarChartData } from '../models/BarChart';
 
 export const Products: string[] = [
   "Shoes",
@@ -41,3 +42,13 @@ export const generateScatterChartData = (labels: string[], timestamps: Date[]): 
 export const getChartsData = (lineChartData: ChartData[], scatterChartData: ScatterChartData[]): [ChartData[], ScatterChartData[]] => {
   return [lineChartData, scatterChartData];
 }
+
+export const BarChartData: IBarChartData[] = [
+  { name: 'Shoes', value: "20K" },
+  { name: 'Shirts', value: "16K" },
+  { name: 'Pants', value: "12K" },
+  { name: 'Jackets', value: "8K" },
+  { name: 'Wallets', value: "4K" },
+  { name: 'Belts', value: "2K" },
+]
+
