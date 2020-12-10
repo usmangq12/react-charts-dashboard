@@ -2,8 +2,8 @@ import React from 'react';
 import Axis from './Axis';
 
 export const XY_Axis = ({ xScale, yScale, height, ticks, t }) => {
-
-    const xSettings = {
+  console.log("rendered? ", xScale, yScale);
+  const xSettings = {
         scale: xScale,
         orient: 'bottom',
         transform: `translate(0, ${height})`,

@@ -55,7 +55,7 @@ const LineChart = ({ data = [], chartProps }: IChartProps) => {
       .append("path")
       .datum(data)
       .attr("fill", "none")
-      .attr("stroke", "#f6c3d0")
+      .attr("stroke", "#ccc")
       .attr("stroke-width", 4)
       .attr("class", "line")
       .transition()

@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
-import { ChartData, ChartProps, IChartProps } from "../../models";
+import { ChartData, ChartProps, IChartProps } from "../models";
 
 interface IProps {
   component: React.FC<IChartProps>;
