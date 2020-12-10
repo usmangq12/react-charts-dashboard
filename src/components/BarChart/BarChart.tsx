@@ -51,7 +51,7 @@ export const BarChart = ({ chartProps, data }: IBarChartProps) => {
           />
         </g>
         <text
-          transform={`translate(${15}, ${180}) rotate(270)`}
+          transform={`translate(${15}, ${260}) rotate(270)`}
           x="0"
           y="15"
           style={{ fontSize: "12px", fontStyle: "italic", fontWeight: 500 }}
